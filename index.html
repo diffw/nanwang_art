@@ -66,6 +66,115 @@
             color: #000;
         }
 
+        .about-links {
+            margin-top: 30px;
+        }
+
+        .about-links a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.05em;
+            border-bottom: 1px solid #000;
+            transition: opacity 0.3s;
+        }
+
+        .about-links a:hover {
+            opacity: 0.6;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 1000;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+        }
+
+        .popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            transform: translateY(20px) scale(0.98);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.1s;
+        }
+
+        .popup.active .popup-content {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.2s;
+        }
+
+        .popup.active .popup-header {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .popup-title {
+            font-size: 1.2em;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .popup-close {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #000;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+
+        .popup-close:hover {
+            opacity: 0.6;
+        }
+
+        .popup-body {
+            line-height: 1.9;
+            font-size: 1.05em;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.3s;
+        }
+
+        .popup.active .popup-body {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .popup-body p {
+            margin-bottom: 25px;
+        }
+
         footer {
             margin-top: 120px;
             color: #999;
@@ -109,17 +218,100 @@
         </header>
 
         <section id="about">
-            <h2>About</h2>
             <p>A Christian, a designer, the husband of one woman, and the father of three children.</p>
-            <p>I first encountered the internet in college in 2001 and became deeply immersed in web design and Flash animation, witnessing the most open era of the Chinese internet. In 2009, I shifted to app design and became one of the earliest mobile internet designers in China.</p>
-            <p>From 2013 to 2019, as the 7th employee and the first designer, I participated fully in Liulishuo's journey—from its early startup days in a residential apartment to its IPO on the New York Stock Exchange (NYSE: LAIX).</p>
-            <p>Born in Changsha, Hunan, I lived in Hangzhou for seven years and Shanghai for nine years. After immigrating to the United States, I spent two years in Los Angeles and now reside in Dallas, Texas.</p>
+            <p>Born in China, live in Dallas Texas.</p>
+            <div class="about-links">
+                <a href="#" id="more-about-link">More about me.</a><br><br>
+                <a href="#" id="doing-now-link">What am I doing now?</a>
+            </div>
         </section>
 
         <footer>
             <p>&copy; 2024 Nan Wang Art</p>
         </footer>
     </div>
+
+    <!-- More About Me Popup -->
+    <div id="more-about-popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2 class="popup-title">More About Me</h2>
+                <button class="popup-close" onclick="closePopup('more-about-popup')">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>A Christian, a designer, the husband of one woman, and the father of three children.</p>
+                <p>I first encountered the internet in college in 2001 and became deeply immersed in web design and Flash animation, witnessing the most open era of the Chinese internet. In 2009, I shifted to app design and became one of the earliest mobile internet designers in China.</p>
+                <p>From 2013 to 2019, as the 7th employee and the first designer, I participated fully in Liulishuo's journey—from its early startup days in a residential apartment to its IPO on the New York Stock Exchange (NYSE: LAIX).</p>
+                <p>Born in Changsha, Hunan, I lived in Hangzhou for seven years and Shanghai for nine years. After immigrating to the United States, I spent two years in Los Angeles and now reside in Dallas, Texas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- What Am I Doing Now Popup -->
+    <div id="doing-now-popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2 class="popup-title">What Am I Doing Now?</h2>
+                <button class="popup-close" onclick="closePopup('doing-now-popup')">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Currently, I'm working on several design projects that explore the intersection of digital art and user experience. I'm particularly interested in how minimalism can create more meaningful interactions in our increasingly complex digital world.</p>
+                <p>I'm also spending time developing a new design system that focuses on accessibility and inclusivity, ensuring that beautiful design can be experienced by everyone.</p>
+                <p>Outside of work, I'm actively involved in my local church community in Dallas, where I contribute to various design and communication projects. I'm also enjoying the process of documenting my design journey and sharing insights with the design community.</p>
+                <p>I'm always open to interesting collaborations and conversations about design, faith, and the creative process.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('more-about-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopup('more-about-popup');
+        });
+
+        document.getElementById('doing-now-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopup('doing-now-popup');
+        });
+
+        function openPopup(popupId) {
+            const popup = document.getElementById(popupId);
+            popup.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            // Trigger animation after display is set
+            requestAnimationFrame(() => {
+                popup.classList.add('active');
+            });
+        }
+
+        function closePopup(popupId) {
+            const popup = document.getElementById(popupId);
+            popup.classList.remove('active');
+            // Wait for animation to complete before hiding (longest delay is 0.3s + 0.5s transition = 0.8s)
+            setTimeout(() => {
+                popup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 800);
+        }
+
+        // Close popup when clicking outside content
+        document.querySelectorAll('.popup').forEach(popup => {
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    closePopup(popup.id);
+                }
+            });
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.popup.active').forEach(popup => {
+                    closePopup(popup.id);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
