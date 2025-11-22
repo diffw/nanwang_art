@@ -3,7 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nan Wang - Designer & Christian</title>
+    <title>Nan Wang - Designer & Christian | Dallas, Texas</title>
+    <meta name="description" content="Nan Wang is a Christian designer based in Dallas, Texas. A designer, the husband of one woman, and the father of three children. Former designer at Liulishuo (NYSE: LAIX).">
+    <meta name="keywords" content="Nan Wang, designer, Christian designer, mobile app designer, Liulishuo, Dallas designer, UX designer, UI designer">
+    <meta name="author" content="Nan Wang">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nanwang.art/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nanwang.art/">
+    <meta property="og:title" content="Nan Wang - Designer & Christian">
+    <meta property="og:description" content="A Christian, a designer, the husband of one woman, and the father of three children. Born in China, live in Dallas Texas.">
+    <meta property="og:site_name" content="Nan Wang Art">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nan Wang - Designer & Christian">
+    <meta name="twitter:description" content="A Christian, a designer, the husband of one woman, and the father of three children. Born in China, live in Dallas Texas.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nan Wang",
+        "jobTitle": "Designer",
+        "description": "A Christian, a designer, the husband of one woman, and the father of three children.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dallas",
+            "addressRegion": "Texas",
+            "addressCountry": "US"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Central South University"
+        },
+        "knowsAbout": ["Web Design", "App Design", "UI/UX Design", "Mobile Internet Design"],
+        "url": "https://nanwang.art"
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -93,7 +133,7 @@
             overflow-y: auto;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+            transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s;
         }
 
         .popup.active {
@@ -107,8 +147,8 @@
             padding: 80px 20px;
             transform: translateY(20px) scale(0.98);
             opacity: 0;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            transition-delay: 0.1s;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.05s;
         }
 
         .popup.active .popup-content {
@@ -123,8 +163,8 @@
             margin-bottom: 60px;
             opacity: 0;
             transform: translateY(-10px);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            transition-delay: 0.2s;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.1s;
         }
 
         .popup.active .popup-header {
@@ -136,21 +176,26 @@
             font-size: 1.2em;
             font-weight: 400;
             letter-spacing: 1px;
+            margin: 0;
+            line-height: 1;
         }
 
         .popup-close {
             background: none;
             border: none;
-            font-size: 1.5em;
+            font-size: 1.8em;
             cursor: pointer;
             color: #000;
             padding: 0;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: opacity 0.3s;
+            line-height: 1;
+            margin: 0;
+            flex-shrink: 0;
         }
 
         .popup-close:hover {
@@ -162,8 +207,8 @@
             font-size: 1.05em;
             opacity: 0;
             transform: translateY(10px);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            transition-delay: 0.3s;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.15s;
         }
 
         .popup.active .popup-body {
@@ -207,9 +252,9 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header role="banner">
             <h1>Nan Wang</h1>
-            <nav class="contact">
+            <nav class="contact" aria-label="Contact links">
                 <a href="mailto:">Email</a>
                 <a href="#">Twitter</a>
                 <a href="#">Instagram</a>
@@ -217,26 +262,28 @@
             </nav>
         </header>
 
-        <section id="about">
-            <p>A Christian, a designer, the husband of one woman, and the father of three children.</p>
-            <p>Born in China, live in Dallas Texas.</p>
-            <div class="about-links">
-                <a href="#" id="more-about-link">More about me.</a><br><br>
-                <a href="#" id="doing-now-link">What am I doing now?</a>
-            </div>
-        </section>
+        <main>
+            <section id="about" aria-label="About Nan Wang">
+                <p>A Christian, a designer, the husband of one woman, and the father of three children.</p>
+                <p>Born in China, live in Dallas Texas.</p>
+                <div class="about-links">
+                    <a href="#more-about" id="more-about-link" aria-label="Read more about Nan Wang">More about me.</a><br><br>
+                    <a href="#doing-now" id="doing-now-link" aria-label="What is Nan Wang doing now">What am I doing now?</a>
+                </div>
+            </section>
+        </main>
 
-        <footer>
+        <footer role="contentinfo">
             <p>&copy; 2024 Nan Wang Art</p>
         </footer>
     </div>
 
     <!-- More About Me Popup -->
-    <div id="more-about-popup" class="popup">
+    <div id="more-about-popup" class="popup" role="dialog" aria-labelledby="more-about-title" aria-modal="true">
         <div class="popup-content">
             <div class="popup-header">
-                <h2 class="popup-title">More About Me</h2>
-                <button class="popup-close" onclick="closePopup('more-about-popup')">&times;</button>
+                <h2 id="more-about-title" class="popup-title">More About Me</h2>
+                <button class="popup-close" onclick="closePopup('more-about-popup')" aria-label="Close dialog">&times;</button>
             </div>
             <div class="popup-body">
                 <p>A Christian, a designer, the husband of one woman, and the father of three children.</p>
@@ -246,13 +293,24 @@
             </div>
         </div>
     </div>
+    
+    <!-- SEO: Full content for search engines (hidden visually) -->
+    <noscript>
+        <section style="display:none;">
+            <h2>More About Nan Wang</h2>
+            <p>A Christian, a designer, the husband of one woman, and the father of three children.</p>
+            <p>I first encountered the internet in college in 2001 and became deeply immersed in web design and Flash animation, witnessing the most open era of the Chinese internet. In 2009, I shifted to app design and became one of the earliest mobile internet designers in China.</p>
+            <p>From 2013 to 2019, as the 7th employee and the first designer, I participated fully in Liulishuo's journey—from its early startup days in a residential apartment to its IPO on the New York Stock Exchange (NYSE: LAIX).</p>
+            <p>Born in Changsha, Hunan, I lived in Hangzhou for seven years and Shanghai for nine years. After immigrating to the United States, I spent two years in Los Angeles and now reside in Dallas, Texas.</p>
+        </section>
+    </noscript>
 
     <!-- What Am I Doing Now Popup -->
-    <div id="doing-now-popup" class="popup">
+    <div id="doing-now-popup" class="popup" role="dialog" aria-labelledby="doing-now-title" aria-modal="true">
         <div class="popup-content">
             <div class="popup-header">
-                <h2 class="popup-title">What Am I Doing Now?</h2>
-                <button class="popup-close" onclick="closePopup('doing-now-popup')">&times;</button>
+                <h2 id="doing-now-title" class="popup-title">What Am I Doing Now?</h2>
+                <button class="popup-close" onclick="closePopup('doing-now-popup')" aria-label="Close dialog">&times;</button>
             </div>
             <div class="popup-body">
                 <p>Currently, I'm working on several design projects that explore the intersection of digital art and user experience. I'm particularly interested in how minimalism can create more meaningful interactions in our increasingly complex digital world.</p>
@@ -262,8 +320,31 @@
             </div>
         </div>
     </div>
+    
+    <!-- SEO: Full content for search engines (hidden visually) -->
+    <noscript>
+        <section style="display:none;">
+            <h2>What Am I Doing Now</h2>
+            <p>Currently, I'm working on several design projects that explore the intersection of digital art and user experience. I'm particularly interested in how minimalism can create more meaningful interactions in our increasingly complex digital world.</p>
+            <p>I'm also spending time developing a new design system that focuses on accessibility and inclusivity, ensuring that beautiful design can be experienced by everyone.</p>
+            <p>Outside of work, I'm actively involved in my local church community in Dallas, where I contribute to various design and communication projects. I'm also enjoying the process of documenting my design journey and sharing insights with the design community.</p>
+            <p>I'm always open to interesting collaborations and conversations about design, faith, and the creative process.</p>
+        </section>
+    </noscript>
 
     <script>
+        // Map popup IDs to URL hashes
+        const popupHashMap = {
+            'more-about-popup': 'more-about',
+            'doing-now-popup': 'doing-now'
+        };
+
+        // Map URL hashes to popup IDs
+        const hashPopupMap = {
+            'more-about': 'more-about-popup',
+            'doing-now': 'doing-now-popup'
+        };
+
         document.getElementById('more-about-link').addEventListener('click', function(e) {
             e.preventDefault();
             openPopup('more-about-popup');
@@ -278,6 +359,13 @@
             const popup = document.getElementById(popupId);
             popup.style.display = 'block';
             document.body.style.overflow = 'hidden';
+            
+            // Update URL hash
+            const hash = popupHashMap[popupId];
+            if (hash) {
+                window.history.pushState(null, '', '#' + hash);
+            }
+            
             // Trigger animation after display is set
             requestAnimationFrame(() => {
                 popup.classList.add('active');
@@ -287,12 +375,57 @@
         function closePopup(popupId) {
             const popup = document.getElementById(popupId);
             popup.classList.remove('active');
-            // Wait for animation to complete before hiding (longest delay is 0.3s + 0.5s transition = 0.8s)
+            
+            // Remove URL hash if it matches this popup
+            const hash = popupHashMap[popupId];
+            if (hash && window.location.hash === '#' + hash) {
+                window.history.pushState(null, '', window.location.pathname);
+            }
+            
+            // Wait for animation to complete before hiding (longest delay is 0.15s + 0.3s transition = 0.45s)
             setTimeout(() => {
                 popup.style.display = 'none';
                 document.body.style.overflow = 'auto';
-            }, 800);
+            }, 450);
         }
+
+        // Check URL hash on page load and open corresponding popup
+        function checkUrlHash() {
+            const hash = window.location.hash.substring(1); // Remove the #
+            const popupId = hashPopupMap[hash];
+            if (popupId) {
+                // Small delay to ensure page is fully loaded
+                setTimeout(() => {
+                    openPopup(popupId);
+                }, 100);
+            }
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(e) {
+            const hash = window.location.hash.substring(1);
+            const popupId = hashPopupMap[hash];
+            
+            // Close all popups first
+            document.querySelectorAll('.popup.active').forEach(popup => {
+                const currentPopupId = popup.id;
+                popup.classList.remove('active');
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 450);
+            });
+            
+            // Open popup if hash exists
+            if (popupId) {
+                setTimeout(() => {
+                    openPopup(popupId);
+                }, 450);
+            }
+        });
+
+        // Check URL hash on page load
+        checkUrlHash();
 
         // Close popup when clicking outside content
         document.querySelectorAll('.popup').forEach(popup => {
